@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 import http.client
+from django.views.generic import View
 # Create your views here.
 import json
 import requests
@@ -22,6 +23,13 @@ import random
 from django.contrib.auth import login,logout
 
 conn = http.client.HTTPConnection("2factor.in")
+
+
+class Registration(View):
+    def get(self, request, *args, **kwargs):
+        return render(request, 'register.html')
+
+
 
 
 class ValidatePhoneSendOTP(APIView):
