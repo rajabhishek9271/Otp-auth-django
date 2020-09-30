@@ -21,5 +21,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     re_path('api/', include('accounts.urls')),
     path('register/', views.Registration.as_view(), name='register'),
+    path('verify_otp/', views.VerifyOTP.as_view(), name='verify_true')
 
 ]
